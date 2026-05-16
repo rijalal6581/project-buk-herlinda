@@ -121,7 +121,7 @@ nav.scrolled {
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 50px;
     align-items: center;
 }
 
@@ -438,8 +438,8 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
-    gap: 60px;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 80px;
     margin-bottom: 80px;
 }
 
@@ -454,23 +454,48 @@ footer {
     margin-bottom: 20px;
 }
 
-.footer-links {
-    list-style: none;
+/* Quick Links Grid */
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.footer-links li {
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: rgba(255, 255, 255, 0.5);
+.quick-links-grid a {
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.quick-links-grid a i {
+    font-size: 1.2rem;
+    color: var(--sage-green);
     transition: var(--transition);
 }
 
-.footer-links a:hover {
-    color: var(--sage-green);
-    padding-left: 10px;
+.quick-links-grid a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.quick-links-grid a:hover i {
+    color: white;
+}
+
+/* Social Buttons */
+.social-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    font-size: 1.5rem;
 }
 
 .newsletter {
@@ -519,8 +544,14 @@ footer {
 
 @media (max-width: 768px) {
     /* Top Navbar with Scrollable Tabs */
-    nav, nav.scrolled {
+    nav {
         padding: 15px 0 5px;
+        background: transparent;
+        backdrop-filter: none;
+        border-bottom: none;
+    }
+
+    nav.scrolled {
         background: rgba(12, 18, 14, 0.95);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--glass-border);
@@ -529,20 +560,20 @@ footer {
     .nav-container {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
-        padding: 0;
+        gap: 20px;
+        padding: 10px 0 0;
     }
     
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     
     .nav-links { 
         display: flex;
         width: 100%;
         overflow-x: auto;
-        padding: 0 20px 10px;
-        gap: 25px;
+        padding: 5px 25px 20px;
+        gap: 35px;
         justify-content: flex-start;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
@@ -553,14 +584,14 @@ footer {
     }
     
     .nav-links a {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         font-weight: 500;
         white-space: nowrap;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.7);
         scroll-snap-align: center;
-        padding: 5px 10px;
+        padding: 10px 22px;
         background: rgba(255, 255, 255, 0.05);
-        border-radius: 20px;
+        border-radius: 30px;
         border: 1px solid transparent;
         transition: var(--transition);
     }
